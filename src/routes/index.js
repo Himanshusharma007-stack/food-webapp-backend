@@ -1,5 +1,5 @@
 const express = require("express");
-const FoodItems = require("../models/foodItem");
+const foodItemController = require("../controllers/foodItem");
 
 const router = express.Router();
 
@@ -9,8 +9,7 @@ router.get("/", (req, res) => {
 
 router.get("/getFoodItems", async (req, res) => {
   try {
-    let data = await FoodItems.find({});
-    res.send({ data, success: true, msg: "Successfully fetched..." });
+    return await foodItemController.getAllfoodItems(req, res);
   } catch (error) {
     console.error("Error ---> ", error);
     res.status(500).send({ success: false, msg: "Error fetching data" });
