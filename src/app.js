@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose");
+const cors = require('cors');
 
 require("./config");
 
@@ -8,6 +8,7 @@ const port = 3000;
 
 // Middleware
 app.use(express.json());
+app.use(cors());
 
 // Load routes
 const indexRoutes = require("./routes/index");

@@ -27,8 +27,9 @@ const mailer = async (
 
     let info = await transporter.sendMail(message);
     return {
-      msg: "Email sent",
+      msg: "Successfully submitted, we will contact you soon.",
       info: info.messageId,
+      success: true
       //   preview: nodemailer.getTestMessageUrl(info),
     };
   } catch (error) {
