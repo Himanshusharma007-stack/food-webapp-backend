@@ -4,7 +4,7 @@ const mailer = async (
   //   text = "Hello world",
   htmlbody = "<b>Hello world?</b>",
   subject = "Query From PlatterPulse!",
-  sendTo = [ "hishrma02@gmail.com", 'kapilkumar568926@gmail.com' ]
+  sendTo = [ "hishrma02@gmail.com" ]
 ) => {
   try {
     let config = {
