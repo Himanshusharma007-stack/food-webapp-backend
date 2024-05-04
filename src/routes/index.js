@@ -24,11 +24,15 @@ router.post("/email", async (req, res) => {
   try {
     let { name, email, mobile, msg } = req.body;
 
-    let htmlbody = `<strong>Name:</strong> ${name} <br/>
-    <strong>Email:</strong> ${email} <br/>
-    <strong>Mobile:</strong> ${mobile} <br/>
-    <strong>Message:</strong> ${msg} <br/>
-    `;
+    let htmlbody = `<div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4;">
+      <h2 style="color: #333333;">${name} wants to reaching out!</h2>
+      <p style="color: #666666;">Here are the details:</p>
+      <ul style="color: #666666; list-style: none; padding-left: 0;">
+        <li><strong>Email:</strong> ${email}</li>
+        <li><strong>Mobile:</strong> ${mobile}</li>
+        <li><strong>Message:</strong> ${msg}</li>
+      </ul>
+    </div>`;
 
     let result = await mailer(htmlbody);
     // let result = {}
