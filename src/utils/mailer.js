@@ -3,7 +3,10 @@ const nodemailer = require("nodemailer");
 const mailer = async (
   htmlbody = "<b>Hello world?</b>",
   subject = "Query From PlatterPulse!",
-  sendTo = process.env.MAIL_SENT_TO || [ "hishrma02@gmail.com" ]
+  sendTo = process.env.MAIL_SENT_TO || [
+    "hishrma02@gmail.com",
+    "himanshu.sharma@gig4ce.com",
+  ]
 ) => {
   try {
     let config = {
@@ -28,7 +31,7 @@ const mailer = async (
     return {
       msg: "Successfully submitted, we will contact you soon.",
       info: info.messageId,
-      success: true
+      success: true,
       //   preview: nodemailer.getTestMessageUrl(info),
     };
   } catch (error) {
